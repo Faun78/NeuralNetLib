@@ -52,7 +52,6 @@ public:
         Matrix output = feedforward(input, layers.size());
         Matrix targets = Matrix::fromarray(target, output_nodes);
         Matrix errorofuotput = Matrix::subtract(targets, output);
-        errorofuotput.map1(quadra);
         Matrix gradients; 
         switch (layers[layers.size() - 1].layer_function)
         {
